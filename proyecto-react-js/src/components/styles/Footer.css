@@ -1,0 +1,82 @@
+*{
+    --blue-1: #0487d9; /* de mas(1) a menos saturado(4) */
+    --blue-2: #048abf;
+    --blue-3: #79bed9;
+    --blue-4: #c4f2ee;
+    --black: #0d0d0d;
+    --grey: #f2f2f2;
+    --white: #fff;
+}
+#footer{
+display: flex;
+flex-wrap: wrap;
+width: 100%;
+background: #0487d9;
+background: -webkit-linear-gradient(0deg, #0487d9 0%, #0487d9 70%, #67a0cc 100%);
+background: linear-gradient(0deg, #0487d9 0%, #0487d9 70%, #67a0cc 100%);
+}
+#footer .categorias{
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    padding: .5rem;
+    text-align: center;
+    font-size: .7rem;
+}
+.detalles-oxigeno{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+    padding: 1rem .5rem 0 .5rem;
+    font-size: .8rem;
+}
+.detalles-oxigeno p{
+    padding: 0 .5rem;
+    color: var(--white);
+}
+#footer h6{
+    margin-bottom: 0.5rem;
+    margin-top: 0.5rem;
+    color: var(--white);
+    letter-spacing: 1px;
+}
+#footer li{
+    padding: 0.125rem;
+}
+#logo-whatsapp a {
+    position: fixed;
+    bottom: 1rem;
+    right: 1rem;
+}
+.logo-editar{
+    max-width: 6vw;
+}
+.categorias a{
+    color: var(--white);
+    font-size: 0.9rem;
+}
+.categorias a:hover{
+    background-color: var(--white);
+    color: var(--blue-2);
+    border-radius: 50px;
+    transition: .75s;
+    padding: 3px;
+}
+@media all and  (min-width: 768px){
+    #footer .categorias{
+        font-size: 1rem;
+    }
+    #footer h6{
+        font-size: 1rem;
+    }
+}
+@media all and  (min-width:1200px) {
+}
+
+@media all and  (max-width:500px) {
+    .logo-editar{
+        max-width: 20vw;
+    }
+
+}

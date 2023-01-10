@@ -1,0 +1,249 @@
+*{
+    --blue-1: #0487d9; /* de mas(1) a menos saturado(4) */
+    --blue-2: #048abf;
+    --blue-3: #79bed9;
+    --blue-4: #c4f2ee;
+    --black: #0d0d0d;
+    --grey: #f2f2f2;
+    --white: #fff;
+}
+#header{
+    background: #67a0cc;
+    background: -webkit-linear-gradient(0deg, #67a0cc 0%, #0487d9 70%, #0487d9 100%);
+    background: linear-gradient(0deg, #67a0cc 0%, #0487d9 70%, #0487d9 100%);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    width: 100%;
+   
+}
+#logo{
+    display: flex;
+    justify-content: center;
+    flex-basis: 100vw;
+    margin: 1rem;
+}
+#logo a img{
+    width: 100px;
+    height: 100px;
+}
+
+#search{
+    display: flex;
+    justify-content: center;
+    width: 90%;
+    height: 2rem;
+    margin: 1rem;
+}
+#search input{
+    border: none;
+    outline: none;
+    flex-grow: 1;
+    padding: 7px;
+    border-radius: 5px;
+}
+#search button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    order: 1;
+    background-color: var(--blue-1);
+    border: none;
+    border-radius: 5px;
+    padding: 3px;
+    margin-left: 1rem;
+}
+#search a{
+    color: var(--white);
+}
+#nav{
+    display: flex;
+    width: 100vw;
+    justify-content: center;
+}
+#nav i{
+    position: relative;
+    color: var(--white);
+    font-size: 1.5rem;
+    padding: .3rem;
+    margin: auto .7rem;
+}
+
+#listProducts{
+    background-color: #fff;
+    box-shadow: var(--area-shadow);
+    max-height: 25rem;
+    overflow-y: scroll;
+    position: absolute;   
+    top: 6rem;  
+    width: 30%;
+    z-index:10;
+}
+
+#listProducts a{
+    align-items: center;
+    color: gray;
+    display: flex;
+    font-size: 1rem;
+    padding: 0.25rem 0.5rem;
+    text-decoration: none;
+}
+#listProducts a:hover{
+    background-color: var(--blue-3);
+}
+#listProducts a img{
+    width: 20%;
+}
+#listProducts a div{
+    align-items: center;
+    
+    margin-left: 2rem;
+}
+#menu{
+    display: none;
+    
+}
+ul li a{
+    text-decoration-line: none;
+    
+}
+ul li {
+    list-style: none;
+    
+}
+@media all and (min-width: 768px){
+    #logo{
+        flex-basis: 100px;
+        margin: 1rem 1rem 0 1rem;
+    }
+    #logo picture img{
+        width: 100%;
+        height: 100%;
+    }
+    #search {
+        width: 40%;
+        margin: auto;
+    }
+    #search input{
+        max-width: 555px;
+    }
+    #nav{
+        margin: auto 4rem;
+        width: 10%;
+    }
+    #nav i{
+        padding: 0;
+    }
+    .burger-menu{
+        display: none;
+    }
+    #menu{
+        display: flex;
+        width: 100%;
+        padding: 0.5rem;
+        justify-content:space-evenly;
+    }
+    .submenu{
+        margin: 0 1rem;
+        font-weight: 450;
+    }
+    .submenu a{
+        color: var(--white);
+        letter-spacing: 2px;
+    }
+    .submenu a:hover{
+        background-color: var(--white);
+        color: var(--blue-2);
+        border-radius: 50px;
+        transition: .75s;
+        padding: 4px;
+        transition: .75s ;
+    }
+    .cart:hover {
+        background-color: var(--white);
+        border-radius: 30px;
+        transition: .75s;
+        padding: 1.5px;
+    }
+    .user:hover {
+        background-color: var(--white);
+        border-radius: 30px;
+        transition: .75s;
+        padding: 1.5px;
+    }
+    
+    .out:hover {
+        background-color: var(--white);
+        border-radius: 30px;
+        transition: .75s;
+        padding: 1.5px;
+    }
+    .dash:hover{
+        background-color: var(--white);
+        border-radius: 30px;
+        transition: .75s;
+        padding: 1.5px;
+    }
+    #nav .user:hover .usertwo{
+        color: var(--blue-2);
+        transition: .75s;
+    }
+    #nav .out:hover .outtwo{
+        color: var(--blue-2);
+        transition: .75s;
+    }
+    #nav .cart:hover .carttwo{
+        color: var(--blue-2);
+        transition: .75s;
+    }
+    #nav .dash:hover .dashtwo{
+        color: var(--blue-2);
+        transition: .75s;
+    }
+}
+@media all and  (min-width:1200px) {
+    #search{
+        width: 55%;
+    }
+}
+@media all and  (max-width:767px) {
+    #listProducts{
+        background-color: #fff;
+        box-shadow: var(--area-shadow);
+        max-height: 25rem;
+        overflow-y: scroll;
+        position: absolute;
+        top: 12rem;
+        width: 60%;
+        z-index:10;
+    }
+    #listProducts a:hover{
+        background-color: var(--blue-3);
+    }
+
+}
+@media all and  (max-width:766px) {
+    #menu{
+    position: relative;
+    height: 0vh;
+    width: 100%;
+    background: #67a0cc;
+    background: -webkit-linear-gradient(0deg, #0487d9 0%, #0487d9 70%, #4da1e2 100%);
+    background: linear-gradient(0deg, #0487d9 0%, #0487d9 70%, #4da1e2 100%);
+    display: none;
+    gap: 1.5rem;
+    transition: all .3s ease-out;
+}
+    #menu.active{
+    display:flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+    transition: all .3s ease-out;
+    height: 15vh;
+    }
+    #menu.active a{
+    color: #fff;
+    }
+}
