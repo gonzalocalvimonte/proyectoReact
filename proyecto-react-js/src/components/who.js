@@ -1,7 +1,9 @@
 import './styles/who.css'
 
 function who(){
-    return(
+    return( 
+        <div>
+       
         <main class="whoMain">
             
             <img src="" alt="logo" class="logoWho"/>
@@ -28,8 +30,9 @@ function who(){
 
             <img src="" alt="imagen3" class="fotoWho3"/>
     
-    </main>
-
+        </main>
+        
+        </div>
     )
 }
 

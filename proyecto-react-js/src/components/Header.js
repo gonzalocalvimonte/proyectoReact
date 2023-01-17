@@ -1,13 +1,14 @@
 import './styles/Header.css'
+import {  Link } from 'react-router-dom'
 
 function Header() {
   return (
         <header id='header'>
           {/* picture para poner el logo de la web*/}
             <picture id='logo'>
-              <a href="/">
+              <Link to="/">
                     <img src="http://localhost:3000/logo_blanco.png" alt="Oxígeno"/>
-              </a>
+              </Link>
             </picture>
 
           {/* el form corresponde a un buscador funcional, que 
@@ -23,7 +24,7 @@ function Header() {
           {/* lista que corresponde a los iconos de usuario,
           carrito,perfil.. */}
             <ul id='nav'>    
-              <li class="test user"><a href="/"><i class="usertwo fa-solid fa-user"></i></a></li>
+              <li class="test user"><Link to="/"><i class="usertwo fa-solid fa-user"></i></Link></li>
                        
               <li class="test cart"><a href="/"><i class="carttwo fa-solid fa-cart-shopping"></i></a></li>
   
@@ -32,7 +33,7 @@ function Header() {
 
           {/*lista que enlaces */}
           <ul id='menu'>
-              <li class="submenu"><a href="/products">Productos</a></li>
+              <li class="submenu"><Link to="/products">Productos</Link></li>
 
               <li class="submenu"><a href="/">Crear Producto</a></li>
 

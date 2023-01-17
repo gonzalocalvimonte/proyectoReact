@@ -5,7 +5,7 @@ module.exports = {
         let products = await db.Products.findAll()
         let productosNuevos = []
         products.forEach(product => {
-            product.image = 'http://localhost:3000/images/Uploads/products/' + product.image
+            product.image = 'http://localhost:3030/images/uploads/products/' + product.image
             productosNuevos.push(product)
         });
         return res.status(200).json({

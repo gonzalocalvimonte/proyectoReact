@@ -9,7 +9,7 @@ const cors = require('cors')
 server.use(cors())
 
 //server
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 3030;
 const start = () => (console.log(`Starting server => http://localhost:${port}`));
 server.listen(port, start());
 
@@ -19,6 +19,7 @@ server.set("view engine", "ejs");
 
 //statics
 const {static} = require("express");
+server.use(static(join(__dirname, "../public")));
 
 //method override
 server.use(method('m'))
