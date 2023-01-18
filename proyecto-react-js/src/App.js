@@ -4,36 +4,35 @@ import Footer from './components/Footer'
 import NotFound from './components/NotFound'
 import Products from './components/Products'
 import ProductDetail from './components/ProductDetail'
-import { Route,  Switch} from 'react-router-dom'
+import ProductCreate from './components/ProductCreate'
+import { Route,  Routes} from 'react-router-dom'
 
 function App() {
   return (
-    <div className="App">
+    
+      <div className="App">
 
-  <Header/>
-      <Switch>
-      <Route exact path="/">
-      
-      </Route>
+        <Header/> 
+        
+        <Routes>
+          
+          <Route exact path="/"  />
 
-      <Route exact path='/who'>      
-        <Who/>      
-      </Route>
+          <Route exact path='/who' element={<Who/>}/>      
+        
+          <Route exact path="/products" element={ <Products/>} />
+          
+          <Route exact path='/products/detail/:id' element={<ProductDetail/>}/>
+            
+          <Route exact path='/products/create' element={ <ProductCreate/>}/>
+          
+          <Route component={NotFound}/>
 
-      <Route exact path='/products'>
-        <Products/>
-      </Route>
+        </Routes>
 
-      <Route exact path='/products/detail/:id'>
-      <ProductDetail/>
-      </Route>
-
-      <Route component={NotFound}/>
-
-      </Switch>
-     
-  <Footer/>    
-    </div>
+        <Footer/>    
+      </div>
+  
   );
 }
 

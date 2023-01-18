@@ -21,10 +21,11 @@ server.set("view engine", "ejs");
 const {static} = require("express");
 server.use(static(join(__dirname, "../public")));
 
+
 //method override
 server.use(method('m'))
-
-server.use(express.urlencoded({extended:true}));
+server.use(express.json())
+server.use(express.urlencoded({extended:false}));
 
 //session
 server.use(session({
@@ -40,4 +41,3 @@ server.use(cookie());
 server.use("/api", require('./routes/products.api.routes'));
 server.use("/api", require('./routes/users.api.routes'))
 
-server.use(express.json())

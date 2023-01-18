@@ -35,7 +35,7 @@ function Header() {
           <ul id='menu'>
               <li class="submenu"><Link to="/products">Productos</Link></li>
 
-              <li class="submenu"><a href="/">Crear Producto</a></li>
+              <li class="submenu"><Link to="/products/create">Crear Producto</Link></li>
 
               <li class="submenu"><a href="/who">¿Quiénes Somos?</a></li>
           </ul>
