@@ -1,16 +1,16 @@
 import { useState } from 'react';
-import { useNavigate } from "react-router-dom"
+import { Link } from "react-router-dom"; 
 import './styles/ProductCreate.css'
 
 function ProductCreate(){
-    const navigate = useNavigate();
+    
 
     const [datos, setDatos] = useState({
         name:'',
         price:'',
         description:'',
         category_id: '1',
-        image:'default.png'
+        image: ''
     })
 
     const handleInputChange = (event) => {
@@ -29,12 +29,13 @@ function ProductCreate(){
             headers:{
                 'Content-type':'application/json'
             }
-        }).then(res => res.json())
-        .catch(error =>console.error('Error:',error)) 
+        })
+        .then(res => res.json())
+        .catch(error =>console.error('Error:',error));
         
-        
-       
+    
     }
+    
 
     return( 
     <main className="mainAddProd">
@@ -64,7 +65,11 @@ function ProductCreate(){
          
 
             <div id="button-add">
-                <button type="submit" className="button-add" onClick={() => navigate('/products')}> Agregar producto </button>
+                <button type="submit" className="button-add">
+                
+                    <Link to={'/products'}>Agregar producto</Link>
+
+                </button>
             </div>
 
         </form>

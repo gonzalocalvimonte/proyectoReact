@@ -14,7 +14,6 @@ function Products(){
         .then(response => response.json())
         .then(data => {
             setProductos(data.data)
-            console.log(setProductos)
         })
         .catch(error => console.log(error))
          }, [] )

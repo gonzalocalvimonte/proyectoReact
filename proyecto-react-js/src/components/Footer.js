@@ -3,7 +3,7 @@ import './styles/Footer.css'
 function Footer() {
   return (
     <footer id="footer">
-    <section class="categorias">
+    <section className="categorias">
         <nav>
             <h6>Deportes acuáticos</h6>
             <ul>
@@ -38,11 +38,11 @@ function Footer() {
         </nav>
         <span id="logo-whatsapp">
             <a href="/" target="_blank">
-                <img src="http://localhost:3000/logowppsinfondo.webp" alt="logowsp" class="logo-editar"/>
+                <img src="http://localhost:3000/logowppsinfondo.webp" alt="logowsp" className="logo-editar"/>
             </a>
         </span>
     </section>
-    <section class="detalles-oxigeno">
+    <section className="detalles-oxigeno">
         <p>Copyright © 2000-2022 Oxigeno S.A</p>
         <p>Calle falsa 123,CP 3000,Albuquerque,CABA</p>
     </section>

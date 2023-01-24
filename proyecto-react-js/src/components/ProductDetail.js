@@ -1,32 +1,57 @@
 import { useState, useEffect } from 'react'
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import './styles/ProductDetail.css'
 
 
 
 function Products(){
-    const { id } = useParams()
-    const [productos, setProductos] = useState([]);
-   
-      useEffect( () => {
-        console.log('se monto el componente')
-        fetch('http://localhost:3030/api/list')
-        .then(response => response.json())
-        .then(data => {
-            setProductos(data.data)
-            console.log(setProductos)
-        })
-        .catch(error => console.log(error))
-         }, [] )
-         
-         console.log(productos)
+        const { id } = useParams()
+        const [productos, setProductos] = useState([]);
+    
+        useEffect( () => {
+            console.log('se monto el componente')
+            fetch('http://localhost:3030/api/list')
+            .then(response => response.json())
+            .then(data => {
+                setProductos(data.data)
+                
+            })
+            .catch(error => console.log(error))
+            }, [] )
+            
+        let product = productos.filter( producto =>
+                producto.id === Number(id))
+                  
+       
+        const [productDestroy] = useState({
+            id:id
+        });
 
-         let product = productos.filter( producto =>
-            producto.id == id)
-            console.log(product)
+        const productDelete = () => {
+            let mensaje
+            let opcion = prompt("Para confirmar, escribe 'aceptar' sino escribe 'cancelar'");
+            if (opcion === "aceptar") {
+            fetch('http://localhost:3030/api/delete',{
+                method:'POST',
+                body: JSON.stringify(productDestroy),
+                headers:{
+                    'Content-type':'application/json'
+                }
+            }).then(res => res.json())
+            .catch(error =>console.error('Error:',error))
+          mensaje = "el producto se borro correctamente"
+        } else if (opcion === "cancelar"){
+            
+        }
+        document.getElementById("ejemplo").innerHTML = mensaje
+
+           
+        }
+      
+      
 
         const productDetail = product.map( (producto,i) => 
-        <section id='main-section'>
+        <section id='main-section' key={i}>
 
             <picture id="imagen-producto">
                 <img src={producto.image} alt="imagen del producto"/>
@@ -46,13 +71,14 @@ function Products(){
 
                 <article id="botones">
             
-                    <button class="boton-editar">
-                        <a href="/">Editar</a>
+                    <button className="boton-editar">
+                        <Link to={"/products/edit/"+ producto.id}>Editar</Link>
                     </button>
 
-                    <form action="" method="post">
-                        <input type="hidden" name="image" value=""/>         
-                        <button type="submit" class="boton-eliminar">Borrar</button>
+                    <form onSubmit={productDelete}>         
+                        <button type="submit" className="boton-eliminar">
+                           Borrar
+                        </button>
                     </form>
             
                 </article>
@@ -60,16 +86,13 @@ function Products(){
             </section>
 
         </section>
-        
         )
-        
-      
 
     return( 
    
 
         <main id="main-detail">
-            
+                <p id='ejemplo'></p>
                 {productDetail}
      
         </main>
